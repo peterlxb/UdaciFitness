@@ -1,7 +1,7 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View ,StyleSheet} from 'react-native'
 import { FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
-import { white } from './colors'
+import { white ,red,orange,lightPurp,pink,blue} from './colors'
 
 export function isBetween (num, x, y) {
   if (num >= x && num <= y) {
@@ -10,6 +10,18 @@ export function isBetween (num, x, y) {
 
   return false
 }
+
+const styles = StyleSheet.create({
+  iconContainer: {
+    padding:5,
+    borderRadius:8,
+    width:50,
+    height:50,
+    justifyContent: 'center',
+    alignItems:"center",
+    marginRight:20
+  }
+})
 
 export function calculateDirection (heading) {
   let direction = ''
@@ -51,9 +63,9 @@ export function getMetricMetaInfo(metric) {
       unit: 'miles',
       step:1,
       type:'steppers',
-      getIcon: () => {
+      getIcon(){
         return (
-          <View>
+          <View style={[styles.iconContainer,{backgroundColor:red}]}>
             <MaterialIcons
               name="directions-run"
               color={white}
@@ -69,13 +81,13 @@ export function getMetricMetaInfo(metric) {
        unit: 'miles',
        step: 1,
        type: 'steppers',
-       getIcon:() => {
+       getIcon (){
          return (
-           <View>
+           <View style={[styles.iconContainer,{backgroundColor:blue}]}>
              <MaterialCommunityIcons
                name='bike'
                color={white}
-               size={32}
+               size={35}
              />
            </View>
          )
@@ -87,13 +99,13 @@ export function getMetricMetaInfo(metric) {
       unit: 'meters',
       step: 100,
       type: 'steppers',
-      getIcon: () => {
+      getIcon (){
         return (
-          <View>
+          <View style={[styles.iconContainer,{backgroundColor:lightPurp}]}>
             <MaterialCommunityIcons
               name='swim'
               color={white}
-              size={32}
+              size={35}
             />
           </View>
         )
@@ -105,13 +117,13 @@ export function getMetricMetaInfo(metric) {
       unit: 'hours',
       step: 1,
       type: 'slider',
-      getIcon: () => {
+      getIcon (){
         return (
-          <View>
+          <View style={[styles.iconContainer,{backgroundColor:orange}]}>
             <FontAwesome
               name='bed'
               color={white}
-              size={30}
+              size={35}
             />
           </View>
         )
@@ -123,9 +135,9 @@ export function getMetricMetaInfo(metric) {
       unit: 'rating',
       step: 1,
       type: 'slider',
-      getIcon: () =>  {
+      getIcon (){
         return (
-          <View>
+          <View style={[styles.iconContainer,{backgroundColor:pink}]}>
             <MaterialCommunityIcons
               name='food'
               color={white}
