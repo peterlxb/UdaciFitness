@@ -7,6 +7,7 @@ import { removeEntry } from '../utils/api'
 import { timeToString, getDailyReminderValue } from '../utils/helpers'
 import MetricCard from './MetricCard'
 
+
 class EntryDetail extends Component {
 
   static navigationOptions = ({navigation}) => {
