@@ -9,6 +9,7 @@ import TextButton from './TextButton'
 import {submitEntry, removeEntry} from '../utils/api'
 import { connect } from 'react-redux'
 import { addEntry } from '../actions'
+import {NavigationActions} from 'react-navigation'
 
 function SubmitBtn ({onPress}) {
   return(
@@ -75,8 +76,14 @@ class AddEntry extends Component {
     }))
 
     //Navigation to Home
+    this.toHome()
+
 
     submitEntry({key, entry})
+  }
+
+  toHome = () => {
+    this.props.navigation.dispatch(NavigationActions.back({key: 'AddEntry'}))
   }
 
   reset = () => {
@@ -87,7 +94,7 @@ class AddEntry extends Component {
       [key]:getDailyReminderValue()
     }))
     //Route to Home
-
+    this.toHome()
     //Update DB
     removeEntry(key)
 
