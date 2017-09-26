@@ -10,7 +10,7 @@ export function submitEntry ({ entry, key }) {
 
 export function fetchCalendarResults () {
   return AsyncStorage.getItem(CALENDAR_STORAGE_KEY)
-    .then(formatCalendarResults)
+    .then((results) => formatCalendarResults(results))
 }
 
 export function removeEntry (key) {
