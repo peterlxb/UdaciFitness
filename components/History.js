@@ -51,7 +51,9 @@ class History extends Component {
     return(
       <View style={styles.item}>
         <DateHeader date={formattedDate}/>
-        <Text style={styles.noDataText}>No Data for this day</Text>
+        <Text style={styles.noDataText}>
+           You did not log any data on this day.
+        </Text>
       </View>
     )
   }
@@ -60,6 +62,7 @@ class History extends Component {
 
   render() {
     const { entries } = this.props
+
     return (
       <UdaciFitnessCalendar
         items={entries}
