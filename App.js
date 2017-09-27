@@ -10,6 +10,7 @@ import { TabNavigator ,StackNavigator} from 'react-navigation'
 import { Constants } from 'expo'
 import EntryDetail from './components/EntryDetails'
 import Live from './components/Live'
+import { setLocalNotification } from '../utils/helpers'
 
 function UdaciStatusBar({backgroundColor, ...props}) {
   return (
@@ -74,6 +75,11 @@ const MainNavigator = StackNavigator({
 })
 
 export default class App extends Component {
+
+  componentDidMount() {
+    setLocalNotification()
+  }
+
   render() {
     return (
       <Provider store={createStore(reducer)}>

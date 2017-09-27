@@ -1,8 +1,8 @@
 {
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 22919,
-  "expoServerNgrokUrl": "https://a5-d9u.peterlxb.udacifitness.exp.direct",
-  "packagerNgrokUrl": "https://packager.a5-d9u.peterlxb.udacifitness.exp.direct",
-  "ngrokPid": 22394
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
