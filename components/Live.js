@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import {View, Text,ActivityIndicator,TouchableOpacity,StyleSheet,Animated} from 'react-native'
+import {View, Text,ActivityIndicator,TouchableOpacity,StyleSheet, Animated} from 'react-native'
 import { Foundation } from '@expo/vector-icons'
-import { Location, Permissions } from 'expo'
+import { Location,Permissions } from 'expo'
 import { calculateDirection } from '../utils/helpers'
 
 export default class Live extends Component {
 
   state = {
-    coords:null,
-    status:'null',
-    direction: '',
-    bounceValue: new Animated.value(1)
-  }
+      coords: null,
+      status: null,
+      direction: '',
+      bounceValue: new Animated.Value(1),
+    }
 
   componentDidMount() {
     Permissions.getAsync(Permissions.LOCATION)
@@ -54,8 +54,8 @@ export default class Live extends Component {
 
       if(newDirection !== direction) {
         Animated.sequence([
-          Animated.timing(bounceValue, {duration:200, toValue:1.04 })
-          Animated.spring(bounceValue, {toValue:1, friction:4 })
+          Animated.timing(bounceValue,{duration:200, toValue:1.04 }),
+          Animated.spring(bounceValue,{toValue:1, friction:4 })
         ]).start()
       }
 
